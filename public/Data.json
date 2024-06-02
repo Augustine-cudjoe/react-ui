@@ -1,0 +1,29 @@
+[{
+    "id":0,
+    "firstName":"John",
+    "lastName":"Cudjoe",
+    "aptDate":"2023-01-03 4:00",
+    "aptNote":"Hi, I am John"
+},
+{
+    "id":1,
+    "firstName":"Augustine",
+    "lastName":"Kwame",
+    "aptDate":"2023-01-03 6:00",
+    "aptNote":"Hi, I am Kwame"
+},
+{
+    "id":2,
+    "firstName":"Bright",
+    "lastName":"womatu",
+    "aptDate":"2023-01-03 1:30",
+    "aptNote":"Hi, I am womatu"
+},
+{
+    "id":3,
+    "firstName":"Evans",
+    "lastName":"Mbama",
+    "aptDate":"2023-01-03 2:00",
+    "aptNote":"Hi, I am Mbama"
+}
+]
