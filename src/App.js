@@ -53,14 +53,14 @@ useEffect(()=>{
 
 const handleSubmit=()=>{
  const lastId = (appointList.length > 0 ? appointList[appointList.length - 1].id : 0) + 1;
-    
-  axios.post('http://localhost:3000/user',{id:lastId, firstName:formData.firstName,lastName:formData.lastName,aptDate:formData.aptDate + '' + formData.aptTime ,aptNote:formData.aptNote })
+  
+  axios.post('http://localhost:3000/user',{id:lastId, firstName:formData.firstName,lastName:formData.lastName, aptDate:formData.aptDate+ '' +formData.aptTime,aptNote:formData.aptNote })
   .then(res=>console.log(res.data))
   .catch(err=>console.log(err))
 }
 const handleUpdate=()=>{
             
-           
+          
   axios.put(`http://localhost:3000/user/${edithId}`,{ firstName:updateformData.firstName,lastName:updateformData.lastName,aptDate:updateformData.aptDate + '' + updateformData.aptTime ,aptNote:updateformData.aptNote })
   .then(res=>{
     console.log(res);
