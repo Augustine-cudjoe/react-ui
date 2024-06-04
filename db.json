@@ -1,0 +1,81 @@
+{
+  "user": [
+    {
+      "firstName": "Edward",
+      "lastName": "Akromah",
+      "aptDate": "2024-06-1209:09",
+      "aptNote": "Hi, I am Johnu",
+      "id": "0"
+    },
+    {
+      "firstName": "Augustinejjjjjj",
+      "lastName": "Kwamekkkkk",
+      "aptDate": "0090-01-0922:38",
+      "aptNote": "Hi, I am Kwame from Ghana",
+      "id": "1"
+    },
+    {
+      "firstName": "Bright",
+      "lastName": "womatu",
+      "aptDate": "1997-09-0809:59",
+      "aptNote": "Hi, I am womatu",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "firstName": "Evans",
+      "lastName": "Mbama",
+      "aptDate": "2023-01-03 2:00",
+      "aptNote": "Hi, I am Mbama"
+    },
+    {
+      "id": "4",
+      "firstName": "thomas",
+      "lastName": "cudjoe",
+      "aptDate": "2024-06-2520:50",
+      "aptNote": "in pizza we crust"
+    },
+    {
+      "id": "5",
+      "firstName": "kekke",
+      "lastName": "nbennene",
+      "aptDate": "2024-06-0409:59",
+      "aptNote": "jekkekeke"
+    },
+    {
+      "id": "6",
+      "firstName": "kkkk",
+      "lastName": "kofii",
+      "aptDate": "2024-06-0409:00",
+      "aptNote": "jejkekekekek"
+    },
+    {
+      "firstName": "ghannaak",
+      "lastName": "",
+      "aptDate": "",
+      "aptNote": "",
+      "id": "7"
+    },
+    {
+      "id": "71",
+      "firstName": "hello",
+      "lastName": "welcome",
+      "aptDate": "2024-06-0409:00",
+      "aptNote": "in God I trust"
+    },
+    {
+      "id": "711",
+      "firstName": "hhh",
+      "lastName": "fkkrkrk",
+      "aptDate": "2024-06-0409:00",
+      "aptNote": "kekkekekekekkejcj jcdjcjkcckk cdc "
+    },
+    {
+      "id": "7111",
+      "firstName": "evans",
+      "lastName": "cudjor",
+      "aptDate": "2024-06-1808:09",
+      "aptNote": "jekkeelele"
+    }
+  ]
+}

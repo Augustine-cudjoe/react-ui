@@ -30,6 +30,7 @@ let  [formData, setFormData]=useState(clearData);
   onSendAppointment(appointmentInfo);
   setFormData(clearData);
   setToggleForm(!toggleForm)
+  console.log(appointmentInfo)
  }
 
   return (
@@ -47,7 +48,7 @@ let  [formData, setFormData]=useState(clearData);
             { toggleForm &&
               
                <Card.Body>
-               <Form>
+               <Form onSubmit={(e) => { e.preventDefault(); formDataPublic(); }}>
                    <Row className="mb-3">
                       <Form.Group as={Col}>
                        <Form.Label>First Name</Form.Label>
@@ -75,7 +76,7 @@ let  [formData, setFormData]=useState(clearData);
                        <Form.Control as="textarea" placeholder="Comments"  id="aptNote"
                        onChange={(event)=>setFormData({...formData, aptNote:event.target.value})}/>
                       </Form.Group>
-                       <Button variant='primary' onClick={formDataPublic}>Submit</Button>
+                       <Button variant='primary' type="submit" className='mb-5' >Submit</Button>
                </Form>
             </Card.Body>
             }
