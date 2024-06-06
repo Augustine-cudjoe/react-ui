@@ -38,13 +38,17 @@ const updateData={
  let  [updateformData, setFormDataupdate]=useState(updateData);
 
 const handleEdit=(id)=>{
-  axios.get(`http://localhost:3000/user/${id}`)
+  const devEnv=process.env.NODE_ENV !=='production';
+ const { REACT_APP_DEV_URL,REACT_APP_PROD_URL}=process.env;
+  axios.get(`${devEnv?REACT_APP_DEV_URL:REACT_APP_PROD_URL }/${id}`)
   .then(res=>{setFormDataupdate({...updateformData, firstName:res.data.firstName,lastName:res.data.lastName, aptDate:res.data.date,aptTime:res.data.time, aptNote:res.data.aptNote  })})
   setEditId(id)
 }
 
 useEffect(()=>{
-  axios.get('http://localhost:3000/user')
+  const devEnv=process.env.NODE_ENV !=='production';
+   const { REACT_APP_DEV_URL,REACT_APP_PROD_URL}=process.env;
+  axios.get(`${devEnv ?REACT_APP_DEV_URL:REACT_APP_PROD_URL }`)
  .then(res=>setAppointList(res.data))
  .catch(err=>console.log(err))
   
@@ -53,15 +57,17 @@ useEffect(()=>{
 
 const handleSubmit=()=>{
  const lastId = (appointList.length > 0 ? appointList[appointList.length - 1].id : 0) + 1;
-  
-  axios.post('http://localhost:3000/user',{id:lastId, firstName:formData.firstName,lastName:formData.lastName, aptDate:formData.aptDate+ '' +formData.aptTime,aptNote:formData.aptNote })
+ const devEnv=process.env.NODE_ENV !=='production';
+ const { REACT_APP_DEV_URL,REACT_APP_PROD_URL}=process.env;
+  axios.post(`${devEnv? REACT_APP_DEV_URL: REACT_APP_PROD_URL}`,{id:lastId, firstName:formData.firstName,lastName:formData.lastName, aptDate:formData.aptDate+ '' +formData.aptTime,aptNote:formData.aptNote })
   .then(res=>console.log(res.data))
   .catch(err=>console.log(err))
 }
 const handleUpdate=()=>{
             
-          
-  axios.put(`http://localhost:3000/user/${edithId}`,{ firstName:updateformData.firstName,lastName:updateformData.lastName,aptDate:updateformData.aptDate + '' + updateformData.aptTime ,aptNote:updateformData.aptNote })
+  const devEnv=process.env.NODE_ENV !=='production';
+  const { REACT_APP_DEV_URL,REACT_APP_PROD_URL}=process.env;  
+  axios.put(`${devEnv? REACT_APP_DEV_URL :REACT_APP_PROD_URL}/${edithId}`,{ firstName:updateformData.firstName,lastName:updateformData.lastName,aptDate:updateformData.aptDate + '' + updateformData.aptTime ,aptNote:updateformData.aptNote })
   .then(res=>{
     console.log(res);
   
