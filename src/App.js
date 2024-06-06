@@ -74,7 +74,7 @@ const handleUpdate=()=>{
       <Container>
         <Row>
         <Col>
-          <h1 className='text-center fw-bold mt-3 '> Book Appointment <FaRegCalendarCheck /></h1>
+          <h1 className='text-center fw-bold mt-3 '> Book an Appointment <FaRegCalendarCheck /></h1>
            
         </Col>
         </Row>
