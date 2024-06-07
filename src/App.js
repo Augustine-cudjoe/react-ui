@@ -38,17 +38,15 @@ const updateData={
  let  [updateformData, setFormDataupdate]=useState(updateData);
 
 const handleEdit=(id)=>{
-  const devEnv=process.env.NODE_ENV !=='production';
- const { REACT_APP_DEV_URL,REACT_APP_PROD_URL}=process.env;
-  axios.get(`${devEnv?REACT_APP_DEV_URL:REACT_APP_PROD_URL }/${id}`)
+
+  axios.get(`https://6661de9063e6a0189febe9ba.mockapi.io/apointment-app/${id}`)
   .then(res=>{setFormDataupdate({...updateformData, firstName:res.data.firstName,lastName:res.data.lastName, aptDate:res.data.date,aptTime:res.data.time, aptNote:res.data.aptNote  })})
   setEditId(id)
 }
 
 useEffect(()=>{
-  const devEnv=process.env.NODE_ENV !=='production';
-   const { REACT_APP_DEV_URL,REACT_APP_PROD_URL}=process.env;
-  axios.get(`${devEnv ?REACT_APP_DEV_URL:REACT_APP_PROD_URL }`)
+  
+  axios.get('https://6661de9063e6a0189febe9ba.mockapi.io/apointment-app/')
  .then(res=>setAppointList(res.data))
  .catch(err=>console.log(err))
   
@@ -57,17 +55,15 @@ useEffect(()=>{
 
 const handleSubmit=()=>{
  const lastId = (appointList.length > 0 ? appointList[appointList.length - 1].id : 0) + 1;
- const devEnv=process.env.NODE_ENV !=='production';
- const { REACT_APP_DEV_URL,REACT_APP_PROD_URL}=process.env;
-  axios.post(`${devEnv? REACT_APP_DEV_URL: REACT_APP_PROD_URL}`,{id:lastId, firstName:formData.firstName,lastName:formData.lastName, aptDate:formData.aptDate+ '' +formData.aptTime,aptNote:formData.aptNote })
+
+  axios.post(`https://6661de9063e6a0189febe9ba.mockapi.io/apointment-app/`,{id:lastId, firstName:formData.firstName,lastName:formData.lastName, aptDate:formData.aptDate+ '' +formData.aptTime,aptNote:formData.aptNote })
   .then(res=>console.log(res.data))
   .catch(err=>console.log(err))
 }
 const handleUpdate=()=>{
             
-  const devEnv=process.env.NODE_ENV !=='production';
-  const { REACT_APP_DEV_URL,REACT_APP_PROD_URL}=process.env;  
-  axios.put(`${devEnv? REACT_APP_DEV_URL :REACT_APP_PROD_URL}/${edithId}`,{ firstName:updateformData.firstName,lastName:updateformData.lastName,aptDate:updateformData.aptDate + '' + updateformData.aptTime ,aptNote:updateformData.aptNote })
+   
+  axios.put(`https://6661de9063e6a0189febe9ba.mockapi.io/apointment-app/${edithId}`,{ firstName:updateformData.firstName,lastName:updateformData.lastName,aptDate:updateformData.aptDate + '' + updateformData.aptTime ,aptNote:updateformData.aptNote })
   .then(res=>{
     console.log(res);
   
