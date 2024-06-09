@@ -26,7 +26,9 @@ let [orderBy,setOrderBy]= useState("asc")
 let [toggleForm, setToggleForm]=useState(false);
 const [edithId,setEditId]=useState(-1)
 let  [formData, setFormData]=useState(clearData);
-
+const api=axios.create({
+  baseURL:`http://localhost:3000/user`
+})
 const updateData={
   id:id,
   firstName:'' ,
@@ -39,34 +41,42 @@ const updateData={
 
 const handleEdit=(id)=>{
 
-  axios.get(`https://6661de9063e6a0189febe9ba.mockapi.io/apointment-app/${id}`)
+  api.get(`/${id}`)
   .then(res=>{setFormDataupdate({...updateformData, firstName:res.data.firstName,lastName:res.data.lastName, aptDate:res.data.date,aptTime:res.data.time, aptNote:res.data.aptNote  })})
   setEditId(id)
 }
 
 useEffect(()=>{
   
-  axios.get('https://6661de9063e6a0189febe9ba.mockapi.io/apointment-app/')
+  api.get('/')
  .then(res=>setAppointList(res.data))
  .catch(err=>console.log(err))
   
 
 },[])
 
-const handleSubmit=()=>{
- const lastId = (appointList.length > 0 ? appointList[appointList.length - 1].id : 0) + 1;
+const handleSubmit =async() => {
+  const newAppointment = {
+    firstName: formData.firstName,
+    lastName: formData.lastName,
+    aptDate: formData.aptDate + ' ' + formData.aptTime,
+    aptNote: formData.aptNote
+  };
 
-  axios.post(`https://6661de9063e6a0189febe9ba.mockapi.io/apointment-app/`,{id:lastId, firstName:formData.firstName,lastName:formData.lastName, aptDate:formData.aptDate+ '' +formData.aptTime,aptNote:formData.aptNote })
-  .then(res=>console.log(res.data))
-  .catch(err=>console.log(err))
-}
+   const res=await  api.post('/', newAppointment )
+     console.log(res)
+    .catch(error => {
+      console.error('Error adding appointment:', error);
+    });
+};
+
 const handleUpdate=()=>{
             
    
-  axios.put(`https://6661de9063e6a0189febe9ba.mockapi.io/apointment-app/${edithId}`,{ firstName:updateformData.firstName,lastName:updateformData.lastName,aptDate:updateformData.aptDate + '' + updateformData.aptTime ,aptNote:updateformData.aptNote })
+  api.put(`/${edithId}`,{ firstName:updateformData.firstName,lastName:updateformData.lastName,aptDate:updateformData.aptDate + '' + updateformData.aptTime ,aptNote:updateformData.aptNote })
   .then(res=>{
-    console.log(res);
-  
+    console.log(res.data);
+    setAppointList(res.data)
   })
   .catch(err=>console.log(err))
 }

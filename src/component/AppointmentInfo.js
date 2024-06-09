@@ -7,7 +7,7 @@ const AppointmentInfo = ({appointment,onDeleteAppointment,handleEdit}) => {
   return (
     <>
      <ListGroup.Item className='mb-3'>
-           <p><small>aptDate: </small> {appointment.date}</p>
+           <p><small>aptDate: </small> {appointment.aptDate}</p>
            <p><strong>First name:</strong>  {appointment.firstName}</p>
             <p><strong>Last name: </strong> {appointment.lastName}</p>
             <p> <strong>Note: </strong> {appointment.aptNote}</p>
