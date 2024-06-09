@@ -55,22 +55,7 @@
       "lastName": "Lasting",
       "aptDate": "2024-06-1209:00",
       "aptNote": "In God we trust"
-    },
-    {
-      "firstName": "Bennice",
-      "lastName": "Amoah",
-      "aptDate": "2024-06-0522:07",
-      "aptNote": "Welcome to my blossom",
-      "id": "711111"
-    },
-    {
-      "id": "7111111",
-      "firstName": "Peter",
-      "lastName": "paul",
-      "newDate": "2024-06-0509:00",
-      "aptNote": "hjkekkeke"
-    },
-    {
+    },{
       "id": "71111111",
       "firstName": "Mina Naa",
       "lastName": "Cudjoe",
@@ -78,32 +63,12 @@
       "aptNote": "I love programming"
     },
     {
-      "id": "711111111",
-      "firstName": "uiii",
-      "lastName": "nmnmmm",
-      "aptDate": "2024-06-1909:00",
-      "aptNote": "in kkk"
-    },
-    {
       "id": "7111111111",
       "firstName": "Evans",
       "lastName": "Asamoah",
       "aptDate": "2024-06-0514:53",
       "aptNote": "We are going"
-    },
-    {
-      "id": "b273",
-      "firstName": "Issah",
-      "lastName": "Ali",
-      "aptDate": "2024-06-10 09:00",
-      "aptNote": "In the morning"
-    },
-    {
-      "id": "b361",
-      "firstName": "Brother",
-      "lastName": "Sister",
-      "aptDate": "2024-06-18 09:00",
-      "aptNote": "I am tired"
     }
+    
   ]
 }
